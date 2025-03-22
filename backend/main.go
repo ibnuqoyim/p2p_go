@@ -29,7 +29,7 @@ type Message struct {
 }
 
 var (
-	addr     = flag.String("addr", ":8080", "http service address")
+	addr     = flag.String("addr", ":443", "http service address")
 	upgrader = websocket.Upgrader{
 		CheckOrigin: func(r *http.Request) bool {
 			return true // Allow all connections for simplicity
