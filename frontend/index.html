@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC P2P Connection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>WebRTC P2P Demo</h1>
+        
+        <!-- Connection setup -->
+        <div class="setup-container">
+            <div class="form-group">
+                <label for="local-id">Your ID:</label>
+                <input type="text" id="local-id" placeholder="Enter your ID">
+                <button id="connect-btn">Connect to Server</button>
+            </div>
+            
+            <div id="peer-connection" class="hidden">
+                <div class="form-group">
+                    <label for="peer-list">Available Peers:</label>
+                    <select id="peer-list">
+                        <option value="">Select a peer</option>
+                    </select>
+                    <button id="refresh-btn">Refresh</button>
+                    <button id="call-btn">Call</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Video streams -->
+        <div class="video-container">
+            <div class="video-wrapper">
+                <h3>Local Stream</h3>
+                <video id="local-video" autoplay muted playsinline></video>
+            </div>
+            <div class="video-wrapper">
+                <h3>Remote Stream</h3>
+                <video id="remote-video" autoplay playsinline></video>
+            </div>
+        </div>
+        
+        <!-- Chat -->
+        <div class="chat-container hidden" id="chat-container">
+            <h3>Data Channel Chat</h3>
+            <div id="messages" class="messages"></div>
+            <div class="message-input">
+                <input type="text" id="message-input" placeholder="Type a message...">
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+        
+        <!-- Status -->
+        <div class="status-container">
+            <p id="status">Disconnected</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
